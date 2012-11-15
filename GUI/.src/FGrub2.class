@@ -1,585 +1,585 @@
 ' Gambas class file
 
-PUBLIC WorkDir AS String = Func.Get_Str("/opt/Customizer/settings.conf", "WORK_DIR=", "/home")
+Public WorkDir As String = Func.Get_Str("/opt/Customizer/settings.conf", "WORK_DIR=", "/home")
 
-PUBLIC SUB Form_Open()
-  DIM SplashStr, Colors2Str, Colors1Str AS String
-  DIM ColorsArray AS String[]
-  DIM test_var AS Integer
+Public Sub Form_Open()
+  Dim SplashStr, Colors2Str, Colors1Str As String
+  Dim ColorsArray As String[]
+  Dim test_var As Integer
   
-  ME.Center
-  ME.Caption = "Grub2"
+  Me.Center
+  Me.Caption = "Grub2"
   test_var = 0
   
   ModeBox.Add("NORMAL")
   ModeBox.Add("HIGHLIGHT")
   
-  IF NOT Exist(WorkDir & "/FileSystem/usr/share/desktop-base") THEN
+  If Not Exist(WorkDir & "/FileSystem/usr/share/desktop-base") Then
     Message.Warning("Install dekstop-base package and retry!")
     test_var = 1
-    GOTO Skip
-  ELSE IF NOT Exist(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh")
-    TRY File.Save(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh", "")
-  ENDIF
+    Goto Skip
+  Else If Not Exist(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh")
+    Try File.Save(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh", "")
+  Endif
   
-  TRY SplashPic.Picture = Picture.Load(WorkDir & "/FileSystem/" & Func.Get_Str(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh", "WALLPAPER=", "/boot/grub/splash.png"))
+  Try SplashPic.Picture = Picture.Load(WorkDir & "/FileSystem/" & Func.Get_Str(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh", "WALLPAPER=", "/boot/grub/splash.png"))
   ColorsArray = Split(Func.Get_Str(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh", "COLOR_NORMAL=", "light-blue/black"), "/")
   Color1Box.Text = ColorsArray[0]
   Color2Box.Text = ColorsArray[1]
   
-    SELECT CASE Color1Box.Text
-      CASE "black"
+    Select Case Color1Box.Text
+      Case "black"
         ' [GB2:FCOL] Normal.ForeColor = Color.Transparent
-        Normal.Foreground = Color.Transparent
+        NormalText.Foreground = Color.Transparent
         ' [GB2:BCOL] Panel1.BackColor = Color.Transparent
         Panel1.Background = Color.Transparent
-      CASE "blue"
+      Case "blue"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkBlue
-        Normal.Foreground = Color.DarkBlue
+        NormalText.Foreground = Color.DarkBlue
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkBlue
         Panel1.Background = Color.DarkBlue
-      CASE "white"
+      Case "white"
         ' [GB2:FCOL] Normal.ForeColor = Color.White
-        Normal.Foreground = Color.White
+        NormalText.Foreground = Color.White
         ' [GB2:BCOL] Panel1.BackColor = Color.White
         Panel1.Background = Color.White
-      CASE "brown"
+      Case "brown"
         ' [GB2:FCOL] Normal.ForeColor = Color.RGB(210, 105, 30)
-        Normal.Foreground = Color.RGB(210, 105, 30)
+        NormalText.Foreground = Color.RGB(210, 105, 30)
         ' [GB2:BCOL] Panel1.BackColor = Color.RGB(210, 105, 30)
         Panel1.Background = Color.RGB(210, 105, 30)
-      CASE "cyan"
+      Case "cyan"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkCyan
-        Normal.Foreground = Color.DarkCyan
+        NormalText.Foreground = Color.DarkCyan
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkCyan
         Panel1.Background = Color.DarkCyan
-      CASE "yellow"
+      Case "yellow"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkYellow
-        Normal.Foreground = Color.DarkYellow
+        NormalText.Foreground = Color.DarkYellow
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkYellow
         Panel1.Background = Color.DarkYellow
-      CASE "magenta"
+      Case "magenta"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkMagenta
-        Normal.Foreground = Color.DarkMagenta
+        NormalText.Foreground = Color.DarkMagenta
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkMagenta
         Panel1.Background = Color.DarkMagenta
-      CASE "red"
+      Case "red"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkRed
-        Normal.Foreground = Color.DarkRed
+        NormalText.Foreground = Color.DarkRed
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkRed
         Panel1.Background = Color.DarkRed
-      CASE "green"
+      Case "green"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkGreen
-        Normal.Foreground = Color.DarkGreen
+        NormalText.Foreground = Color.DarkGreen
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkGreen
         Panel1.Background = Color.DarkGreen
-      CASE "dark-grey"
+      Case "dark-grey"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkGray
-        Normal.Foreground = Color.DarkGray
+        NormalText.Foreground = Color.DarkGray
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkGray
         Panel1.Background = Color.DarkGray
-      CASE "light-blue"
+      Case "light-blue"
         ' [GB2:FCOL] Normal.ForeColor = Color.Blue
-        Normal.Foreground = Color.Blue
+        NormalText.Foreground = Color.Blue
         ' [GB2:BCOL] Panel1.BackColor = Color.Blue
         Panel1.Background = Color.Blue
-      CASE "light-cyan"
+      Case "light-cyan"
         ' [GB2:FCOL] Normal.ForeColor = Color.Cyan
-        Normal.Foreground = Color.Cyan
+        NormalText.Foreground = Color.Cyan
         ' [GB2:BCOL] Panel1.BackColor = Color.Cyan
         Panel1.Background = Color.Cyan
-      CASE "light-yellow"
+      Case "light-yellow"
         ' [GB2:FCOL] Normal.ForeColor = Color.Yellow
-        Normal.Foreground = Color.Yellow
+        NormalText.Foreground = Color.Yellow
         ' [GB2:BCOL] Panel1.BackColor = Color.Yellow
         Panel1.Background = Color.Yellow
-      CASE "light-magenta"
+      Case "light-magenta"
         ' [GB2:FCOL] Normal.ForeColor = Color.Magenta
-        Normal.Foreground = Color.Magenta
+        NormalText.Foreground = Color.Magenta
         ' [GB2:BCOL] Panel1.BackColor = Color.Magenta
         Panel1.Background = Color.Magenta
-      CASE "light-red"
+      Case "light-red"
         ' [GB2:FCOL] Normal.ForeColor = Color.Red
-        Normal.Foreground = Color.Red
+        NormalText.Foreground = Color.Red
         ' [GB2:BCOL] Panel1.BackColor = Color.Red
         Panel1.Background = Color.Red
-      CASE "light-green"
+      Case "light-green"
         ' [GB2:FCOL] Normal.ForeColor = Color.Green
-        Normal.Foreground = Color.Green
+        NormalText.Foreground = Color.Green
         ' [GB2:BCOL] Panel1.BackColor = Color.Green
         Panel1.Background = Color.Green
-      CASE "light-grey"
+      Case "light-grey"
         ' [GB2:FCOL] Normal.ForeColor = Color.Gray
-        Normal.Foreground = Color.Gray
+        NormalText.Foreground = Color.Gray
         ' [GB2:BCOL] Panel1.BackColor = Color.Gray
         Panel1.Background = Color.Gray
-    END SELECT
+    End Select
   
-  SELECT CASE Color2Box.Text
-      CASE "black"
+  Select Case Color2Box.Text
+      Case "black"
         ' [GB2:BCOL] Normal.BackColor = Color.Transparent
-        Normal.Background = Color.Transparent
-      CASE "blue"
+        NormalText.Background = Color.Transparent
+      Case "blue"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkBlue
-        Normal.Background = Color.DarkBlue
-      CASE "white"
+        NormalText.Background = Color.DarkBlue
+      Case "white"
         ' [GB2:BCOL] Normal.BackColor = Color.White
-        Normal.Background = Color.White
-      CASE "brown"
+        NormalText.Background = Color.White
+      Case "brown"
         ' [GB2:BCOL] Normal.BackColor = Color.RGB(210, 105, 30)
-        Normal.Background = Color.RGB(210, 105, 30)
-      CASE "cyan"
+        NormalText.Background = Color.RGB(210, 105, 30)
+      Case "cyan"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkCyan
-        Normal.Background = Color.DarkCyan
-      CASE "yellow"
+        NormalText.Background = Color.DarkCyan
+      Case "yellow"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkYellow
-        Normal.Background = Color.DarkYellow
-      CASE "magenta"
+        NormalText.Background = Color.DarkYellow
+      Case "magenta"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkMagenta
-        Normal.Background = Color.DarkMagenta
-      CASE "red"
+        NormalText.Background = Color.DarkMagenta
+      Case "red"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkRed
-        Normal.Background = Color.DarkRed
-      CASE "green"
+        NormalText.Background = Color.DarkRed
+      Case "green"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkGreen
-        Normal.Background = Color.DarkGreen
-      CASE "dark-grey"
+        NormalText.Background = Color.DarkGreen
+      Case "dark-grey"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkGray
-        Normal.Background = Color.DarkGray
-      CASE "light-blue"
+        NormalText.Background = Color.DarkGray
+      Case "light-blue"
         ' [GB2:BCOL] Normal.BackColor = Color.Blue
-        Normal.Background = Color.Blue
-      CASE "light-cyan"
+        NormalText.Background = Color.Blue
+      Case "light-cyan"
         ' [GB2:BCOL] Normal.BackColor = Color.Cyan
-        Normal.Background = Color.Cyan
-      CASE "light-yellow"
+        NormalText.Background = Color.Cyan
+      Case "light-yellow"
         ' [GB2:BCOL] Normal.BackColor = Color.Yellow
-        Normal.Background = Color.Yellow
-      CASE "light-magenta"
+        NormalText.Background = Color.Yellow
+      Case "light-magenta"
         ' [GB2:BCOL] Normal.BackColor = Color.Magenta
-        Normal.Background = Color.Magenta
-      CASE "light-red"
+        NormalText.Background = Color.Magenta
+      Case "light-red"
         ' [GB2:BCOL] Normal.BackColor = Color.Red
-        Normal.Background = Color.Red
-      CASE "light-green"
+        NormalText.Background = Color.Red
+      Case "light-green"
         ' [GB2:BCOL] Normal.BackColor = Color.Green
-        Normal.Background = Color.Green
-      CASE "light-grey"
+        NormalText.Background = Color.Green
+      Case "light-grey"
         ' [GB2:BCOL] Normal.BackColor = Color.Gray
-        Normal.Background = Color.Gray
-    END SELECT
+        NormalText.Background = Color.Gray
+    End Select
     
     ModeBox.Text = "HIGHLIGHT"
     
-    SELECT CASE Color1Box.Text
-      CASE "black"
+    Select Case Color1Box.Text
+      Case "black"
         ' [GB2:FCOL] Selected.ForeColor = Color.Black
-        Selected.Foreground = Color.Black
-      CASE "blue"
+        SelectedText.Foreground = Color.Black
+      Case "blue"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkBlue
-        Selected.Foreground = Color.DarkBlue
-      CASE "white"
+        SelectedText.Foreground = Color.DarkBlue
+      Case "white"
         ' [GB2:FCOL] Selected.ForeColor = Color.White
-        Selected.Foreground = Color.White
-      CASE "brown"
+        SelectedText.Foreground = Color.White
+      Case "brown"
         ' [GB2:FCOL] Selected.ForeColor = Color.RGB(210, 105, 30)
-        Selected.Foreground = Color.RGB(210, 105, 30)
-      CASE "cyan"
+        SelectedText.Foreground = Color.RGB(210, 105, 30)
+      Case "cyan"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkCyan
-        Selected.Foreground = Color.DarkCyan
-      CASE "yellow"
+        SelectedText.Foreground = Color.DarkCyan
+      Case "yellow"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkYellow
-        Selected.Foreground = Color.DarkYellow
-      CASE "magenta"
+        SelectedText.Foreground = Color.DarkYellow
+      Case "magenta"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkMagenta
-        Selected.Foreground = Color.DarkMagenta
-      CASE "red"
+        SelectedText.Foreground = Color.DarkMagenta
+      Case "red"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkRed
-        Selected.Foreground = Color.DarkRed
-      CASE "green"
+        SelectedText.Foreground = Color.DarkRed
+      Case "green"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkGreen
-        Selected.Foreground = Color.DarkGreen
-      CASE "dark-grey"
+        SelectedText.Foreground = Color.DarkGreen
+      Case "dark-grey"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkGray
-        Selected.Foreground = Color.DarkGray
-      CASE "light-blue"
+        SelectedText.Foreground = Color.DarkGray
+      Case "light-blue"
         ' [GB2:FCOL] Selected.ForeColor = Color.Blue
-        Selected.Foreground = Color.Blue
-      CASE "light-cyan"
+        SelectedText.Foreground = Color.Blue
+      Case "light-cyan"
         ' [GB2:FCOL] Selected.ForeColor = Color.Cyan
-        Selected.Foreground = Color.Cyan
-      CASE "light-yellow"
+        SelectedText.Foreground = Color.Cyan
+      Case "light-yellow"
         ' [GB2:FCOL] Selected.ForeColor = Color.Yellow
-        Selected.Foreground = Color.Yellow
-      CASE "light-magenta"
+        SelectedText.Foreground = Color.Yellow
+      Case "light-magenta"
         ' [GB2:FCOL] Selected.ForeColor = Color.Magenta
-        Selected.Foreground = Color.Magenta
-      CASE "light-red"
+        SelectedText.Foreground = Color.Magenta
+      Case "light-red"
         ' [GB2:FCOL] Selected.ForeColor = Color.Red
-        Selected.Foreground = Color.Red
-      CASE "light-green"
+        SelectedText.Foreground = Color.Red
+      Case "light-green"
         ' [GB2:FCOL] Selected.ForeColor = Color.Green
-        Selected.Foreground = Color.Green
-      CASE "light-grey"
+        SelectedText.Foreground = Color.Green
+      Case "light-grey"
         ' [GB2:FCOL] Selected.ForeColor = Color.Gray
-        Selected.Foreground = Color.Gray
-    END SELECT
+        SelectedText.Foreground = Color.Gray
+    End Select
     
     
-    SELECT CASE Color2Box.Text
-      CASE "black"
+    Select Case Color2Box.Text
+      Case "black"
         ' [GB2:BCOL] Selected.BackColor = Color.Transparent
-        Selected.Background = Color.Transparent
-      CASE "blue"
+        SelectedText.Background = Color.Transparent
+      Case "blue"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkBlue
-        Selected.Background = Color.DarkBlue
-      CASE "white"
+        SelectedText.Background = Color.DarkBlue
+      Case "white"
         ' [GB2:BCOL] Selected.BackColor = Color.White
-        Selected.Background = Color.White
-      CASE "brown"
+        SelectedText.Background = Color.White
+      Case "brown"
         ' [GB2:BCOL] Selected.BackColor = Color.RGB(210, 105, 30)
-        Selected.Background = Color.RGB(210, 105, 30)
-      CASE "cyan"
+        SelectedText.Background = Color.RGB(210, 105, 30)
+      Case "cyan"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkCyan
-        Selected.Background = Color.DarkCyan
-      CASE "yellow"
+        SelectedText.Background = Color.DarkCyan
+      Case "yellow"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkYellow
-        Selected.Background = Color.DarkYellow
-      CASE "magenta"
+        SelectedText.Background = Color.DarkYellow
+      Case "magenta"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkMagenta
-        Selected.Background = Color.DarkMagenta
-      CASE "red"
+        SelectedText.Background = Color.DarkMagenta
+      Case "red"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkRed
-        Selected.Background = Color.DarkRed
-      CASE "green"
+        SelectedText.Background = Color.DarkRed
+      Case "green"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkGreen
-        Selected.Background = Color.DarkGreen
-      CASE "dark-grey"
+        SelectedText.Background = Color.DarkGreen
+      Case "dark-grey"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkGray
-        Selected.Background = Color.DarkGray
-      CASE "light-blue"
+        SelectedText.Background = Color.DarkGray
+      Case "light-blue"
         ' [GB2:BCOL] Selected.BackColor = Color.Blue
-        Selected.Background = Color.Blue
-      CASE "light-cyan"
+        SelectedText.Background = Color.Blue
+      Case "light-cyan"
         ' [GB2:BCOL] Selected.BackColor = Color.Cyan
-        Selected.Background = Color.Cyan
-      CASE "light-yellow"
+        SelectedText.Background = Color.Cyan
+      Case "light-yellow"
         ' [GB2:BCOL] Selected.BackColor = Color.Yellow
-        Selected.Background = Color.Yellow
-      CASE "light-magenta"
+        SelectedText.Background = Color.Yellow
+      Case "light-magenta"
         ' [GB2:BCOL] Selected.BackColor = Color.Magenta
-        Selected.Background = Color.Magenta
-      CASE "light-red"
+        SelectedText.Background = Color.Magenta
+      Case "light-red"
         ' [GB2:BCOL] Selected.BackColor = Color.Red
-        Selected.Background = Color.Red
-      CASE "light-green"
+        SelectedText.Background = Color.Red
+      Case "light-green"
         ' [GB2:BCOL] Selected.BackColor = Color.Green
-        Selected.Background = Color.Green
-      CASE "light-grey"
+        SelectedText.Background = Color.Green
+      Case "light-grey"
         ' [GB2:BCOL] Selected.BackColor = Color.Gray
-        Selected.Background = Color.Gray
-    END SELECT
+        SelectedText.Background = Color.Gray
+    End Select
     
     ModeBox.Text = "NORMAL"
     
     Skip:
-      IF test_var = 1 THEN
+      If test_var = 1 Then
         Func.Event_Msg("Skiping load of grub variables")
-        ME.Close
-      ENDIF
-END
+        Me.Close
+      Endif
+End
 
-PUBLIC SUB Quit_Click()
-  ME.Close
-END
+Public Sub Quit_Click()
+  Me.Close
+End
 
-PUBLIC SUB Color1Box_Click()
+Public Sub Color1Box_Click()
   Func.Replace_Str(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh", "COLOR_" & ModeBox.Text & "=", Color1Box.Text & "/" & Color2Box.Text)
 
-  IF ModeBox.Text = "NORMAL" THEN
-    SELECT CASE Color1Box.Text
-      CASE "black"
+  If ModeBox.Text = "NORMAL" Then
+    Select Case Color1Box.Text
+      Case "black"
         ' [GB2:FCOL] Normal.ForeColor = Color.Transparent
-        Normal.Foreground = Color.Transparent
+        NormalText.Foreground = Color.Transparent
         ' [GB2:BCOL] Panel1.BackColor = Color.Transparent
         Panel1.Background = Color.Transparent
-      CASE "blue"
+      Case "blue"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkBlue
-        Normal.Foreground = Color.DarkBlue
+        NormalText.Foreground = Color.DarkBlue
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkBlue
         Panel1.Background = Color.DarkBlue
-      CASE "white"
+      Case "white"
         ' [GB2:FCOL] Normal.ForeColor = Color.White
-        Normal.Foreground = Color.White
+        NormalText.Foreground = Color.White
         ' [GB2:BCOL] Panel1.BackColor = Color.White
         Panel1.Background = Color.White
-      CASE "brown"
+      Case "brown"
         ' [GB2:FCOL] Normal.ForeColor = Color.RGB(210, 105, 30)
-        Normal.Foreground = Color.RGB(210, 105, 30)
+        NormalText.Foreground = Color.RGB(210, 105, 30)
         ' [GB2:BCOL] Panel1.BackColor = Color.RGB(210, 105, 30)
         Panel1.Background = Color.RGB(210, 105, 30)
-      CASE "cyan"
+      Case "cyan"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkCyan
-        Normal.Foreground = Color.DarkCyan
+        NormalText.Foreground = Color.DarkCyan
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkCyan
         Panel1.Background = Color.DarkCyan
-      CASE "yellow"
+      Case "yellow"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkYellow
-        Normal.Foreground = Color.DarkYellow
+        NormalText.Foreground = Color.DarkYellow
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkYellow
         Panel1.Background = Color.DarkYellow
-      CASE "magenta"
+      Case "magenta"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkMagenta
-        Normal.Foreground = Color.DarkMagenta
+        NormalText.Foreground = Color.DarkMagenta
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkMagenta
         Panel1.Background = Color.DarkMagenta
-      CASE "red"
+      Case "red"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkRed
-        Normal.Foreground = Color.DarkRed
+        NormalText.Foreground = Color.DarkRed
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkRed
         Panel1.Background = Color.DarkRed
-      CASE "green"
+      Case "green"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkGreen
-        Normal.Foreground = Color.DarkGreen
+        NormalText.Foreground = Color.DarkGreen
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkGreen
         Panel1.Background = Color.DarkGreen
-      CASE "dark-grey"
+      Case "dark-grey"
         ' [GB2:FCOL] Normal.ForeColor = Color.DarkGray
-        Normal.Foreground = Color.DarkGray
+        NormalText.Foreground = Color.DarkGray
         ' [GB2:BCOL] Panel1.BackColor = Color.DarkGray
         Panel1.Background = Color.DarkGray
-      CASE "light-blue"
+      Case "light-blue"
         ' [GB2:FCOL] Normal.ForeColor = Color.Blue
-        Normal.Foreground = Color.Blue
+        NormalText.Foreground = Color.Blue
         ' [GB2:BCOL] Panel1.BackColor = Color.Blue
         Panel1.Background = Color.Blue
-      CASE "light-cyan"
+      Case "light-cyan"
         ' [GB2:FCOL] Normal.ForeColor = Color.Cyan
-        Normal.Foreground = Color.Cyan
+        NormalText.Foreground = Color.Cyan
         ' [GB2:BCOL] Panel1.BackColor = Color.Cyan
         Panel1.Background = Color.Cyan
-      CASE "light-yellow"
+      Case "light-yellow"
         ' [GB2:FCOL] Normal.ForeColor = Color.Yellow
-        Normal.Foreground = Color.Yellow
+        NormalText.Foreground = Color.Yellow
         ' [GB2:BCOL] Panel1.BackColor = Color.Yellow
         Panel1.Background = Color.Yellow
-      CASE "light-magenta"
+      Case "light-magenta"
         ' [GB2:FCOL] Normal.ForeColor = Color.Magenta
-        Normal.Foreground = Color.Magenta
+        NormalText.Foreground = Color.Magenta
         ' [GB2:BCOL] Panel1.BackColor = Color.Magenta
         Panel1.Background = Color.Magenta
-      CASE "light-red"
+      Case "light-red"
         ' [GB2:FCOL] Normal.ForeColor = Color.Red
-        Normal.Foreground = Color.Red
+        NormalText.Foreground = Color.Red
         ' [GB2:BCOL] Panel1.BackColor = Color.Red
         Panel1.Background = Color.Red
-      CASE "light-green"
+      Case "light-green"
         ' [GB2:FCOL] Normal.ForeColor = Color.Green
-        Normal.Foreground = Color.Green
+        NormalText.Foreground = Color.Green
         ' [GB2:BCOL] Panel1.BackColor = Color.Green
         Panel1.Background = Color.Green
-      CASE "light-grey"
+      Case "light-grey"
         ' [GB2:FCOL] Normal.ForeColor = Color.Gray
-        Normal.Foreground = Color.Gray
+        NormalText.Foreground = Color.Gray
         ' [GB2:BCOL] Panel1.BackColor = Color.Gray
         Panel1.Background = Color.Gray
-    END SELECT
-  ELSE
-    SELECT CASE Color1Box.Text
-      CASE "black"
+    End Select
+  Else
+    Select Case Color1Box.Text
+      Case "black"
         ' [GB2:FCOL] Selected.ForeColor = Color.Black
-        Selected.Foreground = Color.Black
-      CASE "blue"
+        SelectedText.Foreground = Color.Black
+      Case "blue"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkBlue
-        Selected.Foreground = Color.DarkBlue
-      CASE "white"
+        SelectedText.Foreground = Color.DarkBlue
+      Case "white"
         ' [GB2:FCOL] Selected.ForeColor = Color.White
-        Selected.Foreground = Color.White
-      CASE "brown"
+        SelectedText.Foreground = Color.White
+      Case "brown"
         ' [GB2:FCOL] Selected.ForeColor = Color.RGB(210, 105, 30)
-        Selected.Foreground = Color.RGB(210, 105, 30)
-      CASE "cyan"
+        SelectedText.Foreground = Color.RGB(210, 105, 30)
+      Case "cyan"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkCyan
-        Selected.Foreground = Color.DarkCyan
-      CASE "yellow"
+        SelectedText.Foreground = Color.DarkCyan
+      Case "yellow"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkYellow
-        Selected.Foreground = Color.DarkYellow
-      CASE "magenta"
+        SelectedText.Foreground = Color.DarkYellow
+      Case "magenta"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkMagenta
-        Selected.Foreground = Color.DarkMagenta
-      CASE "red"
+        SelectedText.Foreground = Color.DarkMagenta
+      Case "red"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkRed
-        Selected.Foreground = Color.DarkRed
-      CASE "green"
+        SelectedText.Foreground = Color.DarkRed
+      Case "green"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkGreen
-        Selected.Foreground = Color.DarkGreen
-      CASE "dark-grey"
+        SelectedText.Foreground = Color.DarkGreen
+      Case "dark-grey"
         ' [GB2:FCOL] Selected.ForeColor = Color.DarkGray
-        Selected.Foreground = Color.DarkGray
-      CASE "light-blue"
+        SelectedText.Foreground = Color.DarkGray
+      Case "light-blue"
         ' [GB2:FCOL] Selected.ForeColor = Color.Blue
-        Selected.Foreground = Color.Blue
-      CASE "light-cyan"
+        SelectedText.Foreground = Color.Blue
+      Case "light-cyan"
         ' [GB2:FCOL] Selected.ForeColor = Color.Cyan
-        Selected.Foreground = Color.Cyan
-      CASE "light-yellow"
+        SelectedText.Foreground = Color.Cyan
+      Case "light-yellow"
         ' [GB2:FCOL] Selected.ForeColor = Color.Yellow
-        Selected.Foreground = Color.Yellow
-      CASE "light-magenta"
+        SelectedText.Foreground = Color.Yellow
+      Case "light-magenta"
         ' [GB2:FCOL] Selected.ForeColor = Color.Magenta
-        Selected.Foreground = Color.Magenta
-      CASE "light-red"
+        SelectedText.Foreground = Color.Magenta
+      Case "light-red"
         ' [GB2:FCOL] Selected.ForeColor = Color.Red
-        Selected.Foreground = Color.Red
-      CASE "light-green"
+        SelectedText.Foreground = Color.Red
+      Case "light-green"
         ' [GB2:FCOL] Selected.ForeColor = Color.Green
-        Selected.Foreground = Color.Green
-      CASE "light-grey"
+        SelectedText.Foreground = Color.Green
+      Case "light-grey"
         ' [GB2:FCOL] Selected.ForeColor = Color.Gray
-        Selected.Foreground = Color.Gray
-    END SELECT
-  ENDIF
-END
+        SelectedText.Foreground = Color.Gray
+    End Select
+  Endif
+End
 
-PUBLIC SUB Color2Box_Click()
+Public Sub Color2Box_Click()
   Func.Replace_Str(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh", "COLOR_" & ModeBox.Text & "=", Color1Box.Text & "/" & Color2Box.Text)
 
-  IF ModeBox.Text = "NORMAL" THEN
-    SELECT CASE Color2Box.Text
-      CASE "black"
+  If ModeBox.Text = "NORMAL" Then
+    Select Case Color2Box.Text
+      Case "black"
         ' [GB2:BCOL] Normal.BackColor = Color.Transparent
-        Normal.Background = Color.Transparent
-      CASE "blue"
+        NormalText.Background = Color.Transparent
+      Case "blue"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkBlue
-        Normal.Background = Color.DarkBlue
-      CASE "white"
+        NormalText.Background = Color.DarkBlue
+      Case "white"
         ' [GB2:BCOL] Normal.BackColor = Color.White
-        Normal.Background = Color.White
-      CASE "brown"
+        NormalText.Background = Color.White
+      Case "brown"
         ' [GB2:BCOL] Normal.BackColor = Color.RGB(210, 105, 30)
-        Normal.Background = Color.RGB(210, 105, 30)
-      CASE "cyan"
+        NormalText.Background = Color.RGB(210, 105, 30)
+      Case "cyan"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkCyan
-        Normal.Background = Color.DarkCyan
-      CASE "yellow"
+        NormalText.Background = Color.DarkCyan
+      Case "yellow"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkYellow
-        Normal.Background = Color.DarkYellow
-      CASE "magenta"
+        NormalText.Background = Color.DarkYellow
+      Case "magenta"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkMagenta
-        Normal.Background = Color.DarkMagenta
-      CASE "red"
+        NormalText.Background = Color.DarkMagenta
+      Case "red"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkRed
-        Normal.Background = Color.DarkRed
-      CASE "green"
+        NormalText.Background = Color.DarkRed
+      Case "green"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkGreen
-        Normal.Background = Color.DarkGreen
-      CASE "dark-grey"
+        NormalText.Background = Color.DarkGreen
+      Case "dark-grey"
         ' [GB2:BCOL] Normal.BackColor = Color.DarkGray
-        Normal.Background = Color.DarkGray
-      CASE "light-blue"
+        NormalText.Background = Color.DarkGray
+      Case "light-blue"
         ' [GB2:BCOL] Normal.BackColor = Color.Blue
-        Normal.Background = Color.Blue
-      CASE "light-cyan"
+        NormalText.Background = Color.Blue
+      Case "light-cyan"
         ' [GB2:BCOL] Normal.BackColor = Color.Cyan
-        Normal.Background = Color.Cyan
-      CASE "light-yellow"
+        NormalText.Background = Color.Cyan
+      Case "light-yellow"
         ' [GB2:BCOL] Normal.BackColor = Color.Yellow
-        Normal.Background = Color.Yellow
-      CASE "light-magenta"
+        NormalText.Background = Color.Yellow
+      Case "light-magenta"
         ' [GB2:BCOL] Normal.BackColor = Color.Magenta
-        Normal.Background = Color.Magenta
-      CASE "light-red"
+        NormalText.Background = Color.Magenta
+      Case "light-red"
         ' [GB2:BCOL] Normal.BackColor = Color.Red
-        Normal.Background = Color.Red
-      CASE "light-green"
+        NormalText.Background = Color.Red
+      Case "light-green"
         ' [GB2:BCOL] Normal.BackColor = Color.Green
-        Normal.Background = Color.Green
-      CASE "light-grey"
+        NormalText.Background = Color.Green
+      Case "light-grey"
         ' [GB2:BCOL] Normal.BackColor = Color.Gray
-        Normal.Background = Color.Gray
-    END SELECT
-  ELSE
-    SELECT CASE Color2Box.Text
-      CASE "black"
+        NormalText.Background = Color.Gray
+    End Select
+  Else
+    Select Case Color2Box.Text
+      Case "black"
         ' [GB2:BCOL] Selected.BackColor = Color.Transparent
-        Selected.Background = Color.Transparent
-      CASE "blue"
+        SelectedText.Background = Color.Transparent
+      Case "blue"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkBlue
-        Selected.Background = Color.DarkBlue
-      CASE "white"
+        SelectedText.Background = Color.DarkBlue
+      Case "white"
         ' [GB2:BCOL] Selected.BackColor = Color.White
-        Selected.Background = Color.White
-      CASE "brown"
+        SelectedText.Background = Color.White
+      Case "brown"
         ' [GB2:BCOL] Selected.BackColor = Color.RGB(210, 105, 30)
-        Selected.Background = Color.RGB(210, 105, 30)
-      CASE "cyan"
+        SelectedText.Background = Color.RGB(210, 105, 30)
+      Case "cyan"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkCyan
-        Selected.Background = Color.DarkCyan
-      CASE "yellow"
+        SelectedText.Background = Color.DarkCyan
+      Case "yellow"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkYellow
-        Selected.Background = Color.DarkYellow
-      CASE "magenta"
+        SelectedText.Background = Color.DarkYellow
+      Case "magenta"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkMagenta
-        Selected.Background = Color.DarkMagenta
-      CASE "red"
+        SelectedText.Background = Color.DarkMagenta
+      Case "red"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkRed
-        Selected.Background = Color.DarkRed
-      CASE "green"
+        SelectedText.Background = Color.DarkRed
+      Case "green"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkGreen
-        Selected.Background = Color.DarkGreen
-      CASE "dark-grey"
+        SelectedText.Background = Color.DarkGreen
+      Case "dark-grey"
         ' [GB2:BCOL] Selected.BackColor = Color.DarkGray
-        Selected.Background = Color.DarkGray
-      CASE "light-blue"
+        SelectedText.Background = Color.DarkGray
+      Case "light-blue"
         ' [GB2:BCOL] Selected.BackColor = Color.Blue
-        Selected.Background = Color.Blue
-      CASE "light-cyan"
+        SelectedText.Background = Color.Blue
+      Case "light-cyan"
         ' [GB2:BCOL] Selected.BackColor = Color.Cyan
-        Selected.Background = Color.Cyan
-      CASE "light-yellow"
+        SelectedText.Background = Color.Cyan
+      Case "light-yellow"
         ' [GB2:BCOL] Selected.BackColor = Color.Yellow
-        Selected.Background = Color.Yellow
-      CASE "light-magenta"
+        SelectedText.Background = Color.Yellow
+      Case "light-magenta"
         ' [GB2:BCOL] Selected.BackColor = Color.Magenta
-        Selected.Background = Color.Magenta
-      CASE "light-red"
+        SelectedText.Background = Color.Magenta
+      Case "light-red"
         ' [GB2:BCOL] Selected.BackColor = Color.Red
-        Selected.Background = Color.Red
-      CASE "light-green"
+        SelectedText.Background = Color.Red
+      Case "light-green"
         ' [GB2:BCOL] Selected.BackColor = Color.Green
-        Selected.Background = Color.Green
-      CASE "light-grey"
+        SelectedText.Background = Color.Green
+      Case "light-grey"
         ' [GB2:BCOL] Selected.BackColor = Color.Gray
-        Selected.Background = Color.Gray
-    END SELECT
-  ENDIF
-END
+        SelectedText.Background = Color.Gray
+    End Select
+  Endif
+End
 
-PUBLIC SUB ModeBox_Click()
-  DIM ColorsArray AS String[]
+Public Sub ModeBox_Click()
+  Dim ColorsArray As String[]
   
   ColorsArray = Split(Func.Get_Str(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh", "COLOR_" & ModeBox.Text & "=", "light-blue/black"), "/")
   Color1Box.Text = ColorsArray[0]
   Color2Box.Text = ColorsArray[1]
-END
+End
 
-PUBLIC SUB ChangePic_Click()
-  DIM PIC AS String
+Public Sub ChangePic_Click()
+  Dim PIC As String
 
   PIC = Func.Get_Str("/opt/Customizer/settings.conf", "PIC=", "")
   
   Dialog.Title = "Please select picture"
   Dialog.Filter = ["*.png;*.bmp;*.jpeg;*.jpg", "Pictures"]
   
-  IF Exist(PIC) THEN
+  If Exist(PIC) Then
     Dialog.Path = PIC
-  ELSE
+  Else
     Dialog.Path = "/home"
-  ENDIF
+  Endif
   
-  IF Dialog.OpenFile() THEN RETURN
+  If Dialog.OpenFile() Then Return
   Func.Replace_Str("/opt/Customizer/settings.conf", "PIC=", Dialog.Path)
-  SHELL "convert -resize 800x600! -channel rgb '" & Dialog.Path & "' '" & WorkDir & "/FileSystem/boot/grub/splash.png'" WAIT
+  Shell "convert -resize 800x600! -channel rgb '" & Dialog.Path & "' '" & WorkDir & "/FileSystem/boot/grub/splash.png'" Wait
   Func.Replace_Str(WorkDir & "/FileSystem/usr/share/desktop-base/grub_background.sh", "WALLPAPER=", "/boot/grub/splash.png")
   SplashPic.Picture = Picture.Load(WorkDir & "/FileSystem/boot/grub/splash.png")
-END
+End

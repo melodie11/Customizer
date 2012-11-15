@@ -12,9 +12,10 @@ SearchComment=False
 SearchString=True
 
 [OpenFile]
-Active=1
 File[1]=".src/FMain.form"
-Count=1
+Active=2
+File[2]=".src/FGrub2.class:5.0"
+Count=2
 
 [Watches]
 Count=0
