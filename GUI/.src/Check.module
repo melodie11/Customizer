@@ -31,8 +31,14 @@ End
 
 Public Sub Pkg_Manager()
   Func.Event_Msg("Checking for package-manager")
-  If Exist(WorkDir & "/FileSystem/usr/sbin/synaptic") Or Exist(WorkDir & "/FileSystem/usr/bin/aptitude") Then
+  IF Exist(WorkDir & "/FileSystem/bin/synaptic") OR Exist(WorkDir & "/FileSystem/bin/aptitude") THEN
     FMain.Archive.Enabled = True
+  Else If Exist(WorkDir & "/FileSystem/sbin/synaptic") OR Exist(WorkDir & "/FileSystem/sbin/aptitude") THEN
+    FMain.Archive.Enabled = True
+  Else If Exist(WorkDir & "/FileSystem/usr/bin/synaptic") OR Exist(WorkDir & "/FileSystem/usr/bin/aptitude") THEN
+    FMain.Archive.Enabled = True
+  Else If Exist(WorkDir & "/FileSystem/usr/sbin/synaptic") OR Exist(WorkDir & "/FileSystem/usr/sbin/aptitude") THEN
+     FMain.Archive.Enabled = True 
   Else
     FMain.Archive.Enabled = False
   Endif
