@@ -1,40 +1,25 @@
-Customizer v3.2.3
+# Customizer
 
-Application info:
+Customizer is an advanced Live CD customization and remastering tool. With it, you can build own Ubuntu-based remix using Ubuntu Mini Remix, Ubuntu or its derivatives ISO image with a few mouse clicks.
 
-Looking for a tool that will allow You to customize Ubuntu, Kubuntu, Lubuntu, Xubuntu , Linux Mint or  other Ubuntu based ISO images? Well, you've found it! Customizer is the right choise - it allows you to customize them the way you want to within the matter of few minutes (on a modern PC) running Terminal, Synaptic, Desktop session (in chroot environment) and even more so you can modify the images to fit your needs.
+## Getting Started
 
-Home: https://github.com/fluxer/Customizer/
-Issues: https://github.com/fluxer/Customizer/issues
-Wiki: https://github.com/fluxer/Customizer/wiki
+Visit our GitHub Wiki at  https://github.com/clearkimura/Customizer/wiki  for FAQ, documentation and installation script download.
 
+## Credits
 
-Features:
+Ivailo Monev 'SmiL3y' (code developer) `xakepa10@gmail.com`
 
-	* Customize Ubuntu and derivateves (i.e. Linux Mint) Live CD/DVD ISO images
-	* Quick access to chrooted Terminal, X-nested session, Package Manager and more
-	* Snapshots of the current work can be done to save time when experimenting
-	* Accessible from CLI and GUI, GUI has more options/features
-	
+Michal Glowienka 'eloaders' (PPA maintainer) `eloaders@yahoo.com`
 
-Credits:
+Mubiin Kimura 'clearkimura' (documentation) `clearkimura@gmail.com`
 
-	Coding:
-	  Ivailo Monev (a.k.a. SmiL3y)
-	  <xakepa10@gmail.com>
-	
-	PPA maintainer:
-	  Michał Głowienka (a.k.a. eloaders)
-	  <eloaders@yahoo.com>
-        
-	Documentation:
-	  Mubiin Kimura (a.k.a. clearkimura)
-	  <clearkimura@gmail.com>
-      
-    Gambas3 port:
-      Thiago Abreu (a.k.a thiagoabreu)
-      <thiagoa7@gmail.com>
-	  
-Other:
+Thiago Abreu 'thiagoabreu' (Gambas3 port) `thiagoa7@gmail.com`
 
-	Attention, reporting bugs/issues is very important for the developing process! Please, spare a few minutes to report them. Also, spreading the word about it will not hurt, write reviews in your blogs, make tutorials, edit the wiki and such will help us all so if you have some spare time please do so.
+## Legal
+
+The GNU General Public License version 2 (GPLv2)
+
+Copyright (C) 2010-2013 Ivailo Monev
+
+Copyright (C) 2013 Mubiin Kimura
