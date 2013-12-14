@@ -275,9 +275,16 @@ EXTRA_INFO_MESSAGE "Mounting" "/var/lib/dbus"
 mkdir -p "$WORK_DIR/FileSystem/var/lib/dbus"
 mount --bind /var/lib/dbus "$WORK_DIR/FileSystem/var/lib/dbus" || EXTRA_WARNING_MESSAGE "Unable to mount /var/lib/dbus to" "$WORK_DIR/FileSystem/var/lib/dbus"
 
-EXTRA_INFO_MESSAGE "Mounting" "/var/run/dbus"
-mkdir -p "$WORK_DIR/FileSystem/var/run/dbus" 
-mount --bind /var/run/dbus "$WORK_DIR/FileSystem/var/run/dbus" || EXTRA_WARNING_MESSAGE "Unable to mount /var/run/dbus to" "$WORK_DIR/FileSystem/var/run/dbus"
+# mount --bind get's confused if $WORK_DIR/FileSystem/var/run is symlink to /run (absolute path symlink)
+if [ -h "$WORK_DIR/FileSystem/var/run" ];then
+	EXTRA_INFO_MESSAGE "Mounting" "/run/dbus"
+	mkdir -p "$WORK_DIR/FileSystem/run/dbus" 
+	mount --bind /run/dbus "$WORK_DIR/FileSystem/run/dbus" || EXTRA_WARNING_MESSAGE "Unable to mount /run/dbus to" "$WORK_DIR/FileSystem/run/dbus"
+else
+	EXTRA_INFO_MESSAGE "Mounting" "/var/run/dbus"
+	mkdir -p "$WORK_DIR/FileSystem/var/run/dbus" 
+	mount --bind /var/run/dbus "$WORK_DIR/FileSystem/var/run/dbus" || EXTRA_WARNING_MESSAGE "Unable to mount /var/run/dbus to" "$WORK_DIR/FileSystem/var/run/dbus"
+fi
 }
 
 __allow_local_X_access__() {
