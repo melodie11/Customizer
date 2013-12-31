@@ -35,6 +35,13 @@ Mubiin Kimura 'clearkimura' (documentation) `clearkimura@gmail.com`
 
 Thiago Abreu 'thiagoabreu' (Gambas 3 port) `thiagoa7@gmail.com`
 
+### Volunteers
+
+Muhammad Bashir Al-Noimi 'mbnoimi' (64-bit tester for Gambas 3 port)
+
+Ayman 'aymanim' (typo, spellcheck)
+
+
 ## Legal
 
 The GNU General Public License version 2 (GPLv2)
