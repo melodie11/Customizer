@@ -3,217 +3,217 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="gui_ui.py" line="215"/>
+        <location filename="gui_ui.py" line="222"/>
         <source>Customizer GUI</source>
         <translation>커스터마이저 GUI</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="216"/>
+        <location filename="gui_ui.py" line="223"/>
         <source>Select ISO</source>
         <translation>ISO 선택</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="217"/>
+        <location filename="gui_ui.py" line="224"/>
         <source>Rebuild ISO</source>
         <translation type="unfinished">ISO 다시빌드</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="218"/>
+        <location filename="gui_ui.py" line="225"/>
         <source>QEMU</source>
         <translation>QEMU</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="219"/>
+        <location filename="gui_ui.py" line="226"/>
         <source>Clean</source>
         <translation>청소</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="220"/>
+        <location filename="gui_ui.py" line="227"/>
         <source> Customization </source>
         <translation>사용자 지정</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="221"/>
+        <location filename="gui_ui.py" line="228"/>
         <source>Edit sources</source>
         <translation>소스 수정</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="222"/>
+        <location filename="gui_ui.py" line="229"/>
         <source>Archive</source>
         <translation>아카이브</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="223"/>
+        <location filename="gui_ui.py" line="230"/>
         <source>Install DEB</source>
         <translation>DEB 설치</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="224"/>
+        <location filename="gui_ui.py" line="231"/>
         <source>Terminal</source>
         <translation>터미널</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="225"/>
+        <location filename="gui_ui.py" line="232"/>
         <source>Desktop</source>
         <translation>데스크탑</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="226"/>
+        <location filename="gui_ui.py" line="233"/>
         <source>Execute hook</source>
         <translation>후크 실행</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="227"/>
+        <location filename="gui_ui.py" line="234"/>
         <source> Configuration </source>
         <translation>구성</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="228"/>
+        <location filename="gui_ui.py" line="235"/>
         <source>Hostname</source>
         <translation>호스트 이름</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="229"/>
+        <location filename="gui_ui.py" line="236"/>
         <source>Live user</source>
         <translation>라이브 유저</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="230"/>
+        <location filename="gui_ui.py" line="237"/>
         <source>Main</source>
         <translation>메인</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="235"/>
+        <location filename="gui_ui.py" line="242"/>
         <source>X-nest resolution</source>
         <translation>Х-нест 해상도</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="236"/>
+        <location filename="gui_ui.py" line="243"/>
         <source>Change</source>
         <translation>변경</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="237"/>
+        <location filename="gui_ui.py" line="244"/>
         <source>Working directory</source>
         <translation>작업 디렉토리</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="238"/>
+        <location filename="gui_ui.py" line="245"/>
         <source>QEMU RAM (in MB)</source>
         <translation>QEMU 램 (in MB)</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="239"/>
+        <location filename="gui_ui.py" line="246"/>
         <source>C</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="240"/>
+        <location filename="gui_ui.py" line="247"/>
         <source>Locales</source>
         <translation>위치</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="241"/>
+        <location filename="gui_ui.py" line="248"/>
         <source>64</source>
         <translation>64</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="242"/>
+        <location filename="gui_ui.py" line="249"/>
         <source>128</source>
         <translation>128</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="243"/>
+        <location filename="gui_ui.py" line="250"/>
         <source>256</source>
         <translation>256</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="244"/>
+        <location filename="gui_ui.py" line="251"/>
         <source>512</source>
         <translation>512</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="245"/>
+        <location filename="gui_ui.py" line="252"/>
         <source>1024</source>
         <translation>1024</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="246"/>
+        <location filename="gui_ui.py" line="253"/>
         <source>2048</source>
         <translation>2048</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="247"/>
+        <location filename="gui_ui.py" line="254"/>
         <source>4086</source>
         <translation>4086</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="248"/>
+        <location filename="gui_ui.py" line="255"/>
         <source>640x480</source>
         <translation>640x480</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="249"/>
+        <location filename="gui_ui.py" line="256"/>
         <source>800x600</source>
         <translation>800x600</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="250"/>
+        <location filename="gui_ui.py" line="257"/>
         <source>1024x768</source>
         <translation>1024x768</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="251"/>
+        <location filename="gui_ui.py" line="258"/>
         <source>SquashFS format</source>
         <translation>SquashFS 형식</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="252"/>
+        <location filename="gui_ui.py" line="259"/>
         <source>xz</source>
         <translation>xz</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="253"/>
+        <location filename="gui_ui.py" line="260"/>
         <source>gzip</source>
         <translation>gzip</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="254"/>
+        <location filename="gui_ui.py" line="261"/>
         <source>Settings</source>
         <translation>세팅</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="255"/>
+        <location filename="gui_ui.py" line="263"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;set on runtime!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="285"/>
+        <location filename="gui_ui.py" line="293"/>
         <source>About</source>
         <translation>이 프로그램에 대해서</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="231"/>
+        <location filename="gui_ui.py" line="238"/>
         <source> Extra Customization </source>
         <translation>커스터마이징 추가</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="232"/>
+        <location filename="gui_ui.py" line="239"/>
         <source>Browse FileSystem</source>
         <translation>파일시스템 탐색</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="233"/>
+        <location filename="gui_ui.py" line="240"/>
         <source>Browse ISO</source>
         <translation>ISO 탐색</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="234"/>
+        <location filename="gui_ui.py" line="241"/>
         <source>Extra</source>
         <translation>추가</translation>
     </message>
     <message>
-        <location filename="gui_ui.py" line="256"/>
+        <location filename="gui_ui.py" line="264"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -243,6 +243,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;^ghost or deleted user on github.com&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you know of anyone missing from this list, create a new issue and inform at &lt;a href=&quot;https://github.com/clearkimura/Customizer/issues/new&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;https://github.com/clearkimura/Customizer/issues/new&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Thanks to all who helped making this project useful to this date!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui_ui.py" line="262"/>
+        <source>License</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -317,6 +322,11 @@ p, li { white-space: pre-wrap; }
         <location filename="gui.py" line="320"/>
         <source>Live user can not be empty.</source>
         <translation type="unfinished">라이브 유저는 비워 둘 수 없습니다 .</translation>
+    </message>
+    <message>
+        <location filename="gui.py" line="390"/>
+        <source>License</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
